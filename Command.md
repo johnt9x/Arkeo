@@ -126,3 +126,16 @@ arkeod  tx gov submit-proposal \
 --gas auto --gas-adjustment 1.5 \
 -y
 ```
+🗳 Governance
+List all proposals
+arkeod query gov proposals
+View proposal by id
+arkeod query gov proposal 1
+Vote 'Yes'
+arkeod tx gov vote 78 yes --from wallet --chain-id arkeo --gas auto --gas-adjustment 1.5 -y
+Vote 'No'
+arkeod tx gov vote 1 no --from wallet --chain-id arkeo --gas auto --gas-adjustment 1.5 -y
+Vote 'Abstain'
+arkeod tx gov vote 1 abstain --from wallet --chain-id arkeo --gas auto --gas-adjustment 1.5 -y
+Vote 'NoWithVeto'
+arkeod tx gov vote 1 nowithveto --from wallet --chain-id arkeo --gas auto --gas-adjustment 1.5 -y
