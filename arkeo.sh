@@ -62,9 +62,8 @@ curl -Ls https://raw.githubusercontent.com/johnt9x/Arkeo/main/genesis.json > $HO
 curl -Ls https://raw.githubusercontent.com/johnt9x/Arkeo/main/addrbook.json > $HOME/.arkeo/config/addrbook.json
 
 # Add seeds
-PEERS="5c2a752c9b1952dbed075c56c600c3a79b58c395@195.3.223.168:27346,1eaeb5b9cb2cc1ae5a14d5b87d65fef89998b467@65.108.141.109:17656,b487e892071fd3d89cc9d0de60eeed60ba7c4e5c@65.109.116.119:15756,cb9401d70e1bd59e3ed279942ce026dae82aca1f@65.109.33.48:27656,65c95f70cf0ca8948f6ff59e83b22df3f8484edf@65.108.226.183:22856,3f9bc5552f02dce211db24d5e42c118c61c4abde@65.108.8.28:60656"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.arkeo/config/config.toml
-sed -i -e "s|^seeds *=.*|seeds = \"\"|" $HOME/.arkeo/config/config.toml
+PEERS="cb9401d70e1bd59e3ed279942ce026dae82aca1f@arkeo-testnet.peers.l0vd.com:27656"
+sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.arkeo/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0uarkeo\"/" $HOME/.arkeo/config/app.toml
@@ -84,7 +83,8 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:18617\"
 
 # Start service and check the logs
 echo "Starting the arkeod service..."
-sudo systemctl start arkeod
+arkeod tendermint unsafe-reset-all --home $HOME/.arkeo --keep-addr-book
+sudo systemctl restart arkeod
 
 echo '=============== SETUP FINISHED ==================='
 echo -e 'To check logs: \e[1m\e[32mjournalctl -u arkeod -f -o cat\e[0m'
