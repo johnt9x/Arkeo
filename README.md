@@ -7,7 +7,6 @@ Port: 186. Chain id: arkeo
 wget -O arkeo.sh https://raw.githubusercontent.com/johnt9x/Arkeo/main/arkeo.sh && chmod +x arkeo.sh && ./arkeo.sh
 ```
 # Snapshot:
-https://itrocket.net/services/testnet/arkeo/
 ```
 sudo systemctl stop arkeod
 cp $HOME/.arkeo/data/priv_validator_state.json $HOME/.arkeo/priv_validator_state.json.backup
