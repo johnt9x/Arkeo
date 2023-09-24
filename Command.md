@@ -71,7 +71,7 @@ arkeod tx staking create-validator \
 --pubkey $(arkeod tendermint show-validator) \
 --moniker "$MONIKER" \
 --identity "" \
---details "I love blockchain ❤️" \
+--details "" \
 --chain-id arkeo \
 --gas auto --gas-adjustment 1.5 \
 -y
@@ -82,7 +82,7 @@ arkeod tx staking edit-validator \
 --commission-rate 0.1 \
 --new-moniker "$MONIKER" \
 --identity "" \
---details "I love blockchain ❤️" \
+--details "" \
 --from wallet \
 --chain-id arkeo \
 --gas auto --gas-adjustment 1.5 \
