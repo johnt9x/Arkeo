@@ -62,8 +62,8 @@ curl -Ls https://raw.githubusercontent.com/johnt9x/Arkeo/main/genesis.json > $HO
 curl -Ls https://raw.githubusercontent.com/johnt9x/Arkeo/main/addrbook.json > $HOME/.arkeo/config/addrbook.json
 
 # Add seeds
-PEERS="cb9401d70e1bd59e3ed279942ce026dae82aca1f@arkeo-testnet.peers.l0vd.com:27656"
-sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.arkeo/config/config.toml
+PEERS="5c3ca78b11bbd746f950c198cac51d4e5d4c0750@arkeo-testnet-peer.itrocket.net:18656,769de3fabb66d2dcbae7550ce7252f6f469c5d3f@65.108.126.188:26856,e033753cac027fc6605a95dab3b3fc5550d4b9bf@65.109.84.33:40656,25a9af68f987e254e50d6d7e6a1e68a5a40c1b7c@65.109.92.148:60556,6ae2136893a08a412f0c02eab8d595d502cd5457@65.108.206.118:36656,f970798283d0460832f6c964569ca894a4b6218e@65.108.124.121:61056,be71f456a7aa3da953db899298b53d28b75f4676@65.108.229.93:37656,b487e892071fd3d89cc9d0de60eeed60ba7c4e5c@65.109.116.119:15756,893a44b8501faa22fbe2f4d61c6586f231bd1638@65.109.28.177:33656,8c2d799bcc4fbf44ef34bbd2631db5c3f4619e41@213.239.207.175:60656,d1ade0f7afb6d0e99dcfd3a8d1373a03d459adb8@158.220.91.214:15756"
+sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.arkeo/config/config.toml
 
 # Set minimum gas price
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0uarkeo\"/" $HOME/.arkeo/config/app.toml
