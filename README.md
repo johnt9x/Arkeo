@@ -37,7 +37,8 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 Download binaries
 ```
 cd $HOME
-wget https://snapshots.l0vd.com/arkeo-testnet/arkeod
+rm -rf arkeod
+wget https://testnet-files.itrocket.net/arkeo/arkeod
 chmod +x arkeod
 mv arkeod /root/go/bin/
 arkeod version
