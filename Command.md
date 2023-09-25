@@ -132,10 +132,29 @@ arkeod query gov proposals
 View proposal by id
 arkeod query gov proposal 1
 Vote 'Yes'
+
 arkeod tx gov vote 78 yes --from wallet --chain-id arkeo --gas auto --gas-adjustment 1.5 -y
+```
 Vote 'No'
+```
 arkeod tx gov vote 1 no --from wallet --chain-id arkeo --gas auto --gas-adjustment 1.5 -y
+```
 Vote 'Abstain'
+```
 arkeod tx gov vote 1 abstain --from wallet --chain-id arkeo --gas auto --gas-adjustment 1.5 -y
+```
 Vote 'NoWithVeto'
+```
 arkeod tx gov vote 1 nowithveto --from wallet --chain-id arkeo --gas auto --gas-adjustment 1.5 -y
+```
+Remove node
+```
+sudo systemctl stop arkeod
+sudo systemctl disable arkeod
+sudo rm /etc/systemd/system/arkeod.service
+sudo systemctl daemon-reload
+rm -f $(which arkeod)
+rm -rf $HOME/arkeod
+rm -rf $HOME/.arkeo
+rm -rf $HOME/arkeo.sh
+```
