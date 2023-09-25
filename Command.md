@@ -102,7 +102,7 @@ arkeod q slashing signing-info $(arkeod tendermint show-validator)
 ```
 Unjail validator
 ```
-arkeod tx slashing unjail --broadcast-mode block --from wallet --chain-id arkeo --gas auto --gas-adjustment 1.5 -y
+arkeod tx slashing unjail --from wallet --chain-id arkeo --gas auto --gas-adjustment 1.5 -y
 ```
 Active Validators List
 ```
