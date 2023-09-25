@@ -132,7 +132,7 @@ arkeod query gov proposals
 View proposal by id
 arkeod query gov proposal 1
 Vote 'Yes'
-
+```
 arkeod tx gov vote 78 yes --from wallet --chain-id arkeo --gas auto --gas-adjustment 1.5 -y
 ```
 Vote 'No'
