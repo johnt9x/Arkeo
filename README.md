@@ -81,8 +81,8 @@ arkeod init $MONIKER --chain-id arkeo
 ```
 # Download genesis and addrbook
 ```
-curl -Ls https://raw.githubusercontent.com/johnt9x/Arkeo/main/genesis.json > $HOME/.arkeo/config/genesis.json
-curl -Ls https://raw.githubusercontent.com/johnt9x/Arkeo/main/addrbook.json > $HOME/.arkeo/config/addrbook.json
+wget -O $HOME/.arkeo/config/genesis.json https://testnet-files.itrocket.net/arkeo/genesis.json
+wget -O $HOME/.arkeo/config/addrbook.json https://testnet-files.itrocket.net/arkeo/addrbook.json
 ```
 # Add seeds
 ```
