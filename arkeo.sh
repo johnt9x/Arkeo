@@ -59,8 +59,8 @@ arkeod init $MONIKER --chain-id arkeo
 
 # Download genesis and addrbook
 echo "Downloading genesis and addrbook..."
-curl -Ls https://raw.githubusercontent.com/johnt9x/Arkeo/main/genesis.json > $HOME/.arkeo/config/genesis.json
-curl -Ls https://raw.githubusercontent.com/johnt9x/Arkeo/main/addrbook.json > $HOME/.arkeo/config/addrbook.json
+wget -O $HOME/.arkeo/config/genesis.json https://testnet-files.itrocket.net/arkeo/genesis.json
+wget -O $HOME/.arkeo/config/addrbook.json https://testnet-files.itrocket.net/arkeo/addrbook.json
 
 # Add seeds
 PEERS="a4dbd1be41263b6c84194c8009f6e109f2aba3f2@62.171.130.196:18656,5c2a752c9b1952dbed075c56c600c3a79b58c395@195.3.223.168:27346,1eaeb5b9cb2cc1ae5a14d5b87d65fef89998b467@65.108.141.109:17656,b487e892071fd3d89cc9d0de60eeed60ba7c4e5c@65.109.116.119:15756,cb9401d70e1bd59e3ed279942ce026dae82aca1f@65.109.33.48:27656,65c95f70cf0ca8948f6ff59e83b22df3f8484edf@65.108.226.183:22856,3f9bc5552f02dce211db24d5e42c118c61c4abde@65.108.8.28:60656"
